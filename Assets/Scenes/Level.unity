@@ -929,7 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a87b458aaf8484e8cdf723f8ee5cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 10
+  velocity: 20
   modeloParado: {fileID: 2143926001}
   modeloAndando: {fileID: 779317260}
 --- !u!114 &1372548741
@@ -1593,7 +1593,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 60fcfb4f783591c47ad846cd72938b51, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.282
+  m_Volume: 0.176
   m_Pitch: 1
   Loop: 1
   Mute: 0

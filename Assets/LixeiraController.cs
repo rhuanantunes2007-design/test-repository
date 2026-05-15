@@ -27,7 +27,7 @@ public class LixeiraController : MonoBehaviour
         this.transform.position += new Vector3(horizontalInput * velocity * Time.deltaTime, 0, 0);
 
         // Troca de modelos
-        if(horizontalInput > 0.1f || horizontalInput < -0.1f )
+        if(horizontalInput > 0.3f || horizontalInput < -0.3f )
         {
             // Andando
             modeloParado.SetActive(false);
