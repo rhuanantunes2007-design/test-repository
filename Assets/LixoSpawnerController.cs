@@ -37,7 +37,7 @@ public class LixoSpawnerController : MonoBehaviour
             points = 0;
         }
 
-        pointsText.text = "Pontuação: " + points.ToString();
+        pointsText.text = "POINTS: " + points.ToString();
     }
 
     void Start()
@@ -45,7 +45,7 @@ public class LixoSpawnerController : MonoBehaviour
         GameObject Menu = GameObject.FindWithTag("Menu");
 
         StartCoroutine(SpawnRoutine());
-        pointsText.text = "Pontuação: 0";
+        pointsText.text = "POINTS: 0";
         victoryText.gameObject.SetActive(false);
     }
 

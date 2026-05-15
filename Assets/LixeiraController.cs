@@ -6,27 +6,56 @@ public class LixeiraController : MonoBehaviour
 {
     public float velocity;
 
+    // Modelos
+    public GameObject modeloParado;
+    public GameObject modeloAndando;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Começa parado
+        modeloParado.SetActive(true);
+        modeloAndando.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        this.transform.position += new Vector3(horizontalInput*velocity,0,0);
-        if(this.transform.position.x>10)
+
+        // Movimento
+        this.transform.position += new Vector3(horizontalInput * velocity * Time.deltaTime, 0, 0);
+
+        // Troca de modelos
+        if(horizontalInput > 0.1f || horizontalInput < -0.1f )
         {
-            this.transform.position = new Vector3(10, 
-                                                  this.transform.position.y,
-                                                  this.transform.position.z);
-        }else if (this.transform.position.x<-10)
+            // Andando
+            modeloParado.SetActive(false);
+            modeloAndando.SetActive(true);
+        }
+        else
         {
-            this.transform.position = new Vector3(-10, 
-                                                  this.transform.position.y,
-                                                  this.transform.position.z);
+            // Parado
+            modeloParado.SetActive(true);
+            modeloAndando.SetActive(false);
+        }
+
+        // Limite da tela
+        if(this.transform.position.x > 10)
+        {
+            this.transform.position = new Vector3(
+                10,
+                this.transform.position.y,
+                this.transform.position.z
+            );
+        }
+        else if(this.transform.position.x < -10)
+        {
+            this.transform.position = new Vector3(
+                -10,
+                this.transform.position.y,
+                this.transform.position.z
+            );
         }
     }
 }
